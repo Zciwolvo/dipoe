@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/dipoe/static/css/main.e6c13ad2.css",
-    "main.js": "/dipoe/static/js/main.230e7672.js",
-    "static/js/787.273cb76b.chunk.js": "/dipoe/static/js/787.273cb76b.chunk.js",
-    "static/media/logo.png": "/dipoe/static/media/logo.f0ef3d5b35e21947d2ab.png",
-    "static/media/disc.jpg": "/dipoe/static/media/disc.cefca8995f67d9c0f1ae.jpg",
-    "static/media/background2.png": "/dipoe/static/media/background2.9cd75cbf575fcdc42bf6.png",
+    "main.js": "/dipoe/static/js/main.e0ada331.chunk.js",
+    "main.js.map": "/dipoe/static/js/main.e0ada331.chunk.js.map",
+    "runtime-main.js": "/dipoe/static/js/runtime-main.8ccc9d23.js",
+    "runtime-main.js.map": "/dipoe/static/js/runtime-main.8ccc9d23.js.map",
+    "static/js/2.0e926c68.chunk.js": "/dipoe/static/js/2.0e926c68.chunk.js",
+    "static/js/2.0e926c68.chunk.js.map": "/dipoe/static/js/2.0e926c68.chunk.js.map",
     "index.html": "/dipoe/index.html",
-    "main.e6c13ad2.css.map": "/dipoe/static/css/main.e6c13ad2.css.map",
-    "main.230e7672.js.map": "/dipoe/static/js/main.230e7672.js.map",
-    "787.273cb76b.chunk.js.map": "/dipoe/static/js/787.273cb76b.chunk.js.map"
+    "precache-manifest.9162b3960c6c7ec0c05770809aa4d799.js": "/dipoe/precache-manifest.9162b3960c6c7ec0c05770809aa4d799.js",
+    "service-worker.js": "/dipoe/service-worker.js",
+    "static/js/2.0e926c68.chunk.js.LICENSE.txt": "/dipoe/static/js/2.0e926c68.chunk.js.LICENSE.txt",
+    "static/js/main.e0ada331.chunk.js.LICENSE.txt": "/dipoe/static/js/main.e0ada331.chunk.js.LICENSE.txt",
+    "static/media/background2.png": "/dipoe/static/media/background2.2039ea26.png",
+    "static/media/disc.jpg": "/dipoe/static/media/disc.d601e2fc.jpg",
+    "static/media/logo.png": "/dipoe/static/media/logo.b946e774.png"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.230e7672.js"
+    "static/js/runtime-main.8ccc9d23.js",
+    "static/js/2.0e926c68.chunk.js",
+    "static/js/main.e0ada331.chunk.js"
   ]
 }
