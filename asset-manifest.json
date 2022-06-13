@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/dipoe/static/js/main.e0ada331.chunk.js",
-    "main.js.map": "/dipoe/static/js/main.e0ada331.chunk.js.map",
+    "main.js": "/dipoe/static/js/main.360fbb63.chunk.js",
+    "main.js.map": "/dipoe/static/js/main.360fbb63.chunk.js.map",
     "runtime-main.js": "/dipoe/static/js/runtime-main.8ccc9d23.js",
     "runtime-main.js.map": "/dipoe/static/js/runtime-main.8ccc9d23.js.map",
-    "static/js/2.0e926c68.chunk.js": "/dipoe/static/js/2.0e926c68.chunk.js",
-    "static/js/2.0e926c68.chunk.js.map": "/dipoe/static/js/2.0e926c68.chunk.js.map",
+    "static/js/2.f94c274f.chunk.js": "/dipoe/static/js/2.f94c274f.chunk.js",
+    "static/js/2.f94c274f.chunk.js.map": "/dipoe/static/js/2.f94c274f.chunk.js.map",
     "index.html": "/dipoe/index.html",
-    "precache-manifest.9162b3960c6c7ec0c05770809aa4d799.js": "/dipoe/precache-manifest.9162b3960c6c7ec0c05770809aa4d799.js",
+    "precache-manifest.d46b85eb7b733f917f0cfdfa21ce8ac0.js": "/dipoe/precache-manifest.d46b85eb7b733f917f0cfdfa21ce8ac0.js",
     "service-worker.js": "/dipoe/service-worker.js",
-    "static/js/2.0e926c68.chunk.js.LICENSE.txt": "/dipoe/static/js/2.0e926c68.chunk.js.LICENSE.txt",
-    "static/js/main.e0ada331.chunk.js.LICENSE.txt": "/dipoe/static/js/main.e0ada331.chunk.js.LICENSE.txt",
+    "static/js/2.f94c274f.chunk.js.LICENSE.txt": "/dipoe/static/js/2.f94c274f.chunk.js.LICENSE.txt",
+    "static/js/main.360fbb63.chunk.js.LICENSE.txt": "/dipoe/static/js/main.360fbb63.chunk.js.LICENSE.txt",
     "static/media/background2.png": "/dipoe/static/media/background2.2039ea26.png",
     "static/media/disc.jpg": "/dipoe/static/media/disc.d601e2fc.jpg",
     "static/media/logo.png": "/dipoe/static/media/logo.b946e774.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8ccc9d23.js",
-    "static/js/2.0e926c68.chunk.js",
-    "static/js/main.e0ada331.chunk.js"
+    "static/js/2.f94c274f.chunk.js",
+    "static/js/main.360fbb63.chunk.js"
   ]
 }
