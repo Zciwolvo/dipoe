@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa4dce13e0979984f634cb4dc67724d6",
+    "revision": "eb39baedc0b2cb3900a24eab014f863c",
     "url": "/dipoe/index.html"
   },
   {
@@ -12,12 +12,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dipoe/static/js/2.f94c274f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5b14a8d85fb7afca9946",
-    "url": "/dipoe/static/js/main.0ff99fd1.chunk.js"
+    "revision": "57392cb775597ee00c59",
+    "url": "/dipoe/static/js/main.e21b040b.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/dipoe/static/js/main.0ff99fd1.chunk.js.LICENSE.txt"
+    "url": "/dipoe/static/js/main.e21b040b.chunk.js.LICENSE.txt"
   },
   {
     "revision": "891969a5408f4f6989dd",

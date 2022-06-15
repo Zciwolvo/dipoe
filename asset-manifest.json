@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/dipoe/static/js/main.0ff99fd1.chunk.js",
-    "main.js.map": "/dipoe/static/js/main.0ff99fd1.chunk.js.map",
+    "main.js": "/dipoe/static/js/main.e21b040b.chunk.js",
+    "main.js.map": "/dipoe/static/js/main.e21b040b.chunk.js.map",
     "runtime-main.js": "/dipoe/static/js/runtime-main.8ccc9d23.js",
     "runtime-main.js.map": "/dipoe/static/js/runtime-main.8ccc9d23.js.map",
     "static/js/2.f94c274f.chunk.js": "/dipoe/static/js/2.f94c274f.chunk.js",
     "static/js/2.f94c274f.chunk.js.map": "/dipoe/static/js/2.f94c274f.chunk.js.map",
     "index.html": "/dipoe/index.html",
-    "precache-manifest.58b00d9cbaaf25a195544e201c61b00a.js": "/dipoe/precache-manifest.58b00d9cbaaf25a195544e201c61b00a.js",
+    "precache-manifest.5d5bc9e89a092712037e3a227d30b1a1.js": "/dipoe/precache-manifest.5d5bc9e89a092712037e3a227d30b1a1.js",
     "service-worker.js": "/dipoe/service-worker.js",
     "static/js/2.f94c274f.chunk.js.LICENSE.txt": "/dipoe/static/js/2.f94c274f.chunk.js.LICENSE.txt",
-    "static/js/main.0ff99fd1.chunk.js.LICENSE.txt": "/dipoe/static/js/main.0ff99fd1.chunk.js.LICENSE.txt",
+    "static/js/main.e21b040b.chunk.js.LICENSE.txt": "/dipoe/static/js/main.e21b040b.chunk.js.LICENSE.txt",
     "static/media/background2.png": "/dipoe/static/media/background2.2039ea26.png",
     "static/media/disc.jpg": "/dipoe/static/media/disc.d601e2fc.jpg",
     "static/media/logo.png": "/dipoe/static/media/logo.b946e774.png"
@@ -18,6 +18,6 @@
   "entrypoints": [
     "static/js/runtime-main.8ccc9d23.js",
     "static/js/2.f94c274f.chunk.js",
-    "static/js/main.0ff99fd1.chunk.js"
+    "static/js/main.e21b040b.chunk.js"
   ]
 }
