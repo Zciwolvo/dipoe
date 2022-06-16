@@ -24,12 +24,12 @@
     },
     "proxy": "http://localhost:4242",
     "scripts": {
-        "dev": "react-scripts start",
-        "start": "node server.js",
+        "start-client": "react-scripts start",
+        "start-server": "node server.js",
         "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
+        "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "heroku-postbuild": "npm run build"
+        "start": "npm run build"
     },
     "eslintConfig": {
         "extends": "react-app"
