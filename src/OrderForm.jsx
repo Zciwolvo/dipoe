@@ -38,7 +38,7 @@ const Input = styled.input`
   height: 3em;
   padding-left: 1em;
   background-color: grey;
-  color: white;
+  color: orangered;
   @media (max-width: 720px) {
     width: 80vw;
     min-width: 0;
@@ -211,7 +211,7 @@ const OrderForm = () => {
         >
           <span id="button-text">Przejdź do płatności</span>
         </PaymentButton>
-        <Link to="/inperson">
+        <Link to="/inperson" style={{ textDecoration: "none" }}>
           <InputText style={{ margin: "0.5em", textDecoration: "none" }}>
             Preferujesz odbiór osobisty na terenie Rybnika?
           </InputText>

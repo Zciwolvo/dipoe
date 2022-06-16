@@ -37,7 +37,7 @@ const Input = styled.input`
   height: 3em;
   padding-left: 1em;
   background-color: grey;
-  color: white;
+  color: orangered;
   @media (max-width: 720px) {
     width: 80vw;
     min-width: 0;
@@ -174,8 +174,8 @@ const ClaimForm = () => {
         >
           <span id="button-text">Przejdź do płatności</span>
         </PaymentButton>
-        <Link to="/order">
-          <InputText style={{ margin: "0.5em", textDecoration: "none" }}>
+        <Link to="/order" style={{ textDecoration: "none" }}>
+          <InputText style={{ margin: "0.5em" }}>
             Preferujesz dostawę do domu?
           </InputText>
         </Link>
