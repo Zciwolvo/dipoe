@@ -5,10 +5,14 @@ const stripe = require("stripe")(
     "sk_test_51L7nq8GOhLaGDHrE8NdbFkg6DlmKINK8m7RWLt02itff4JznaW736vqsrCQwIP5Qr1wm2S8XX5Amol0kQTz3pEnh002Sx9L5YB"
 );
 
-app.use(express.static("public"));
+const path = require("path");
+const port = process.env.PORT || 4242;
+const publicPath = path.join(__dirname, "..", "public");
+
+app.use(express.static(publicPath));
 app.use(express.json());
 
-app.post("/create-payment-intent", async(res) => {
+app.post("/create-payment-intent", async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
         amount: 5000,
@@ -21,4 +25,4 @@ app.post("/create-payment-intent", async(res) => {
     });
 });
 
-app.listen(4242, () => console.log("Node server listening on port 4242!"));
+app.listen(port, () => console.log("Node server listening on port 4242!"));
