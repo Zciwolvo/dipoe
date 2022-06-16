@@ -25,7 +25,6 @@
     "devDependencies": {
         "concurrently": "^4.1.2"
     },
-    "proxy": "http://localhost:4242",
     "scripts": {
         "start-client": "react-scripts start",
         "start-server": "node server.js",
@@ -33,7 +32,7 @@
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
         "start": "npm install && concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build"
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -49,5 +48,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "proxy": "http://localhost:4242"
 }
