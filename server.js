@@ -12,7 +12,7 @@ const publicPath = path.join(__dirname, "..", "public");
 app.use(express.static(publicPath));
 app.use(express.json());
 
-app.post("/create-payment-intent", async(req, res) => {
+app.post("/create-payment-intent", async(res) => {
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
         amount: 5000,
@@ -25,4 +25,4 @@ app.post("/create-payment-intent", async(req, res) => {
     });
 });
 
-app.listen(port, () => console.log("Node server listening on port 4242!"));
+app.listen(port, () => console.log(`Node server listening on port ${port}!`));
