@@ -29,7 +29,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "concurrently \"yarn start-client\" \"yarn start-server\""
+        "start": "node server/index.js"
     },
     "eslintConfig": {
         "extends": "react-app"
