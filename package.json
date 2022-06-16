@@ -18,7 +18,8 @@
         "save-dev": "^0.0.1-security",
         "serve": "^13.0.2",
         "stripe": "^8.202.0",
-        "styled-components": "^5.3.5"
+        "styled-components": "^5.3.5",
+        "concurrently": "^4.1.2"
     },
     "devDependencies": {
         "concurrently": "^4.1.2"
