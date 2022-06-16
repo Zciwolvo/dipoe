@@ -31,7 +31,7 @@
         "dev": "concurrently \"yarn start-client\" \"yarn start-server\"",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "npm install && concurrently \"yarn start-client\" \"yarn start-server\" && npm run build && serve -s build"
+        "start": "npm install && yarn dev && npm run build && serve -s build"
     },
     "eslintConfig": {
         "extends": "react-app"
