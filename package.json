@@ -3,7 +3,7 @@
     "homepage": "https://dipoe.herokuapp.com/",
     "version": "0.1.0",
     "engines": {
-        "node": "12.11.1"
+        "node": "14.17.6"
     },
     "dependencies": {
         "-": "^0.0.1",
@@ -24,8 +24,6 @@
     },
     "proxy": "http://localhost:4242",
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
         "start-client": "react-scripts start",
         "start-server": "node server.js",
         "build": "react-scripts build",
