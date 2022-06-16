@@ -26,7 +26,9 @@ app.post("/create-payment-intent", async(res) => {
 });
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(
+        path.resolve(__dirname, "client", "build", "./public/index.html")
+    );
 });
 
 app.listen(port, () => console.log(`Node server listening on port ${port}!`));
