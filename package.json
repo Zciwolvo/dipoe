@@ -2,6 +2,9 @@
     "name": "dipoe",
     "homepage": "https://dipoe.herokuapp.com/",
     "version": "0.1.0",
+    "engines": {
+        "node": "14.17.6"
+    },
     "dependencies": {
         "-": "^0.0.1",
         "@stripe/react-stripe-js": "^1.0.0",
@@ -13,6 +16,7 @@
         "react-router-dom": "^6.3.0",
         "react-scripts": "^3.4.0",
         "save-dev": "^0.0.1-security",
+        "serve": "^13.0.2",
         "stripe": "^8.202.0",
         "styled-components": "^5.3.5"
     },
@@ -26,7 +30,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "concurrently \"yarn start-client\" \"yarn start-server\""
+        "start": "concurrently \"npm run build\" \"node server.js\" && serve -s build"
     },
     "eslintConfig": {
         "extends": "react-app"
