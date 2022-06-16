@@ -19,7 +19,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route
-            path="/dipoe"
+            path="/"
             element={
               state ? (
                 <Homepage setState={setState} />
