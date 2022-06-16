@@ -27,7 +27,7 @@
     "scripts": {
         "start-client": "npm start --prefix client",
         "start-server": "node server.js",
-        "build": "npm install && npm run build",
+        "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
         "start": "concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
