@@ -153,8 +153,11 @@ const Purchase = (props) => {
             prywatnego
             <br /> -Podpisy członków zespołu
             <br />
-            -Oficjalne wlepy Dipoe <br /> Za całość materiału w tym mastering
-            odpowiadają autorzy. <br />
+            -Oficjalne wlepy Dipoe <br />
+            -Brelok DIPOE
+            <br />
+            Za całość materiału w tym mastering odpowiadają autorzy.
+            <br />
             Nagrania odbywały się w DIPOE HOME QRWA STUDIO a nagrywaniem płyt
             zajęło się SZASTA INC. Wszelkie prawa zastrzeżone. Ogólnie JD <br />{" "}
             <br /> 2+5=7 <br />

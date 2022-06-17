@@ -186,7 +186,7 @@ const OrderForm = () => {
             setFieldName={setAddress1}
           />
           <SingleInput
-            fieldName={"Numer budynku:"}
+            fieldName={"Numer budynku / Numer mieszkania:"}
             fieldValue={Address2}
             setFieldName={setAddress2}
           />
