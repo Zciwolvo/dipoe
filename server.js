@@ -4,10 +4,11 @@ const app = express();
 const stripe = require("stripe")(
     "sk_test_51L7nq8GOhLaGDHrE8NdbFkg6DlmKINK8m7RWLt02itff4JznaW736vqsrCQwIP5Qr1wm2S8XX5Amol0kQTz3pEnh002Sx9L5YB"
 );
+const path = require("path");
+const PORT = process.env.PORT || 4242;
 
 app.use(express.static(path.resolve(__dirname, "../build")));
 app.use(express.json());
-port = 80;
 
 app.post("/create-payment-intent", async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
@@ -26,4 +27,4 @@ app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../build", "index.html"));
 });
 
-app.listen(port, () => console.log(`Node server listening on port ${port}!`));
+app.listen(PORT, () => console.log(`Node server listening on port ${PORT}!`));
