@@ -7,7 +7,7 @@ const stripe = require("stripe")(
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
-port = process.env.PORT || 80;
+port = 80;
 
 app.post("/create-payment-intent", async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
