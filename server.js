@@ -5,7 +5,6 @@ const stripe = require("stripe")(
     "sk_test_51L7nq8GOhLaGDHrE8NdbFkg6DlmKINK8m7RWLt02itff4JznaW736vqsrCQwIP5Qr1wm2S8XX5Amol0kQTz3pEnh002Sx9L5YB"
 );
 
-const path = require("path");
 const port = process.env.PORT || 4242;
 
 app.use(express.static("public"));
@@ -17,10 +16,6 @@ app.post("/create-payment-intent", async(req, res) => {
         amount: 5000,
         currency: "pln",
         payment_method_types: ["card", "p24"],
-    });
-
-    app.get("/*", function(req, res) {
-        res.sendFile(path.join(__dirname + "/index.html"));
     });
 
     res.send({
