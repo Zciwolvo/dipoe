@@ -30,8 +30,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "npm install && concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build",
-        "heroku-postbuild": "npm run build"
+        "start": "npm install && concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
     },
     "eslintConfig": {
         "extends": "react-app"
