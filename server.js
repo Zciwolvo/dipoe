@@ -7,6 +7,7 @@ const stripe = require("stripe")(
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
+port = process.env.PORT || 80;
 
 app.post("/create-payment-intent", async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
@@ -21,4 +22,4 @@ app.post("/create-payment-intent", async(req, res) => {
     });
 });
 
-app.listen(4242, () => console.log("Node server listening on port 4242!"));
+app.listen(port, () => console.log(`Node server listening on port ${port}!`));
