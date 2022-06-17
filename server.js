@@ -7,7 +7,7 @@ const stripe = require("stripe")(
 const path = require("path");
 const PORT = process.env.PORT || 4242;
 
-app.use(express.static(path.resolve(__dirname, "../build")));
+app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
 app.post("/create-payment-intent", async(req, res) => {
@@ -24,7 +24,7 @@ app.post("/create-payment-intent", async(req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "./build", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`Node server listening on port ${PORT}!`));
