@@ -172,6 +172,8 @@ const Purchase = (props) => {
             -Oficjalne wlepy Dipoe <br />
             -Brelok DIPOE
             <br />
+            A to wszystko w preorderze za jedyne 39.99 (z dostawą 46.50).
+            <br />
             Za całość materiału w tym mastering odpowiadają autorzy.
             <br />
             Nagrania odbywały się w DIPOE HOME QRWA STUDIO a nagrywaniem płyt

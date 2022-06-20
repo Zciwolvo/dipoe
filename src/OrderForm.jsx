@@ -133,7 +133,7 @@ const OrderForm = (props) => {
   };
 
   const changeValues = () => {
-    props.setPrice(4000);
+    props.setPrice(3999);
     props.setSubpage(1);
   };
 

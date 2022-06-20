@@ -14,7 +14,7 @@ import Payment from "./Payment";
 export default function App() {
   const [state, setState] = useState(true);
   const [subpage, setSubpage] = useState(1);
-  const [price, setPrice] = useState(4000);
+  const [price, setPrice] = useState(3999);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
