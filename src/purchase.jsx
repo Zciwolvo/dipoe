@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import BackgroundPhoto from "./src/background2.png";
@@ -106,8 +106,18 @@ const Purchase = (props) => {
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Row>
         <Column>
+          <Text
+            style={{
+              width: "100%",
+              textAlign: "center",
+              maxWidth: "100%",
+              fontSize: "3em",
+            }}
+          >
+            POZOSTAŁO {props.count} PŁYT
+          </Text>
           <Cover src={CoverPhoto} />
-          <Link to="/order" style={{ textDecoration: "none" }}>
+          <Link to="/form" style={{ textDecoration: "none" }}>
             <Button>
               <Text>Zamów już teraz!</Text>
             </Button>

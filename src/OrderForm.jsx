@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import BackgroundPhoto from "./src/background2.png";
 
 const Order = styled.form`
-  width: 60vw;
+  width: 65vw;
   min-width: 500px;
   align-self: center;
   box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
@@ -38,7 +38,7 @@ const Input = styled.input`
   height: 3em;
   padding-left: 1em;
   background-color: grey;
-  color: orangered;
+  color: black;
   @media (max-width: 720px) {
     width: 80vw;
     min-width: 0;
@@ -115,80 +115,77 @@ const SingleInput = (props) => {
   );
 };
 
-const OrderForm = () => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [City, setCity] = useState("");
-  const [Mail, setMail] = useState("");
-  const [Phone, setPhone] = useState("");
-  const [Postal, setPostal] = useState("");
-  const [Address1, setAddress1] = useState("");
-  const [Address2, setAddress2] = useState("");
-
-  const [allFilled, setAllFilled] = useState(false);
-
-  const Data = {
-    Name: name,
-    Surname: surname,
-    City: City,
-    Mail: Mail,
-    Phone: Phone,
-    Postal: Postal,
-    Address1: Address1,
-    Address2: Address2,
+const OrderForm = (props) => {
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    if (props.props.allFilled) {
+      localStorage.setItem("topic", "Nowy zakup z dostawą do domu.");
+      localStorage.setItem("name", props.props.name);
+      localStorage.setItem("surname", props.props.surname);
+      localStorage.setItem("mail", props.props.mail);
+      localStorage.setItem("phone", props.props.phone);
+      localStorage.setItem("city", props.props.city);
+      localStorage.setItem("postal", props.props.postal);
+      localStorage.setItem("address1", props.props.address1);
+      localStorage.setItem("address2", props.props.address2);
+      navigate("/payment");
+    }
   };
 
-  const navigate = useNavigate();
+  const changeValues = () => {
+    props.setPrice(4000);
+    props.setSubpage(1);
+  };
 
   return (
     <OrderBackground>
-      <Order onSubmit={allFilled ? navigate("/payment") : ""}>
+      <Order onSubmit={handleSubmit}>
         <Row>
           <SingleInput
             fieldName={"Imię:"}
-            fieldValue={name}
-            setFieldName={setName}
+            fieldValue={props.props.name}
+            setFieldName={props.props.setName}
           />
           <SingleInput
             fieldName={"Nazwisko:"}
-            fieldValue={surname}
-            setFieldName={setSurname}
+            fieldValue={props.props.surname}
+            setFieldName={props.props.setSurname}
           />
         </Row>
         <Row>
           <SingleInput
-            fieldName={"Adres e-mail:"}
-            fieldValue={Mail}
-            setFieldName={setMail}
+            fieldName={"Adres email:"}
+            fieldValue={props.props.mail}
+            setFieldName={props.props.setMail}
           />
           <SingleInput
             fieldName={"Numer telefonu:"}
-            fieldValue={Phone}
-            setFieldName={setPhone}
+            fieldValue={props.props.phone}
+            setFieldName={props.props.setPhone}
           />
         </Row>
         <Row>
           <SingleInput
             fieldName={"Miasto:"}
-            fieldValue={City}
-            setFieldName={setCity}
+            fieldValue={props.props.city}
+            setFieldName={props.props.setCity}
           />
           <SingleInput
             fieldName={"Kod pocztowy:"}
-            fieldValue={Postal}
-            setFieldName={setPostal}
+            fieldValue={props.props.postal}
+            setFieldName={props.props.setPostal}
           />
         </Row>
         <Row>
           <SingleInput
             fieldName={"Ulica:"}
-            fieldValue={Address1}
-            setFieldName={setAddress1}
+            fieldValue={props.props.address1}
+            setFieldName={props.props.setAddress1}
           />
           <SingleInput
             fieldName={"Numer budynku / Numer mieszkania:"}
-            fieldValue={Address2}
-            setFieldName={setAddress2}
+            fieldValue={props.props.address2}
+            setFieldName={props.props.setAddress2}
           />
         </Row>
 
@@ -197,25 +194,37 @@ const OrderForm = () => {
           style={{ textDecoration: "none" }}
           onClick={() => {
             if (
-              (name !== "") &
-              (surname !== "") &
-              (City !== "") &
-              (Mail !== "") &
-              (Phone !== "") &
-              (Postal !== "") &
-              (Address1 !== "") &
-              (Address2 !== "")
+              (props.props.name !== "") &
+              (props.props.surname !== "") &
+              (props.props.city !== "") &
+              (props.props.mail !== "") &
+              (props.props.phone !== "") &
+              (props.props.postal !== "") &
+              (props.props.address1 !== "") &
+              (props.props.address2 !== "")
             )
-              setAllFilled(true);
+              props.props.setAllFilled(true);
           }}
         >
           <span id="button-text">Przejdź do płatności</span>
         </PaymentButton>
-        <Link to="/inperson" style={{ textDecoration: "none" }}>
-          <InputText style={{ margin: "0.5em", textDecoration: "none" }}>
-            Preferujesz odbiór osobisty na terenie Rybnika?
-          </InputText>
-        </Link>
+
+        <InputText style={{ margin: "0.5em", textDecoration: "none" }}>
+          <Link
+            to=""
+            onClick={() => changeValues()}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            {" "}
+            Preferujesz odbiór osobisty na terenie Rybnika?{" "}
+          </Link>
+        </InputText>
+        <InputText
+          style={{ fontSize: "1em", margin: "1em", textDecoration: "none" }}
+        >
+          *W przypadku dostawy poza teren Rybnika dochodzi dodatkowa opłata za
+          przesyłkę.
+        </InputText>
       </Order>
     </OrderBackground>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import dotenv from "dotenv";
 import styled from "styled-components";
 
 import CheckoutForm from "./CheckoutForm";
@@ -23,11 +24,11 @@ const CardPayment = styled.div`
   }
 `;
 
-const stripePromise = loadStripe(
-  "pk_test_51L7nq8GOhLaGDHrE7hkowuhV2dhw6EOf7jl9UPRzJ7Akc0X7zE9uobgJGYuyImCD7tNnGTULhZ436Sd3X0bT4Bwc00vBTZAllM"
-);
+const stripe_public = `${process.env.REACT_APP_STRIPE_PROMISE}`;
 
-export default function Payment() {
+const stripePromise = loadStripe(stripe_public);
+
+export default function Payment(props) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -35,14 +36,15 @@ export default function Payment() {
     fetch("/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "CD" }] }),
+      body: JSON.stringify({ price: props.props.price }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
 
   const appearance = {
-    theme: "stripe",
+    theme: "night",
+    labels: "floating",
   };
   const options = {
     clientSecret,
@@ -53,7 +55,7 @@ export default function Payment() {
     <CardPayment className="App">
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
+          <CheckoutForm clientSecret={clientSecret} />
         </Elements>
       )}
     </CardPayment>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const Input = styled.input`
   height: 3em;
   padding-left: 1em;
   background-color: grey;
-  color: orangered;
+  color: black;
   @media (max-width: 720px) {
     width: 80vw;
     min-width: 0;
@@ -114,48 +114,53 @@ const SingleInput = (props) => {
   );
 };
 
-const ClaimForm = () => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [Mail, setMail] = useState("");
-  const [Phone, setPhone] = useState("");
-
-  const [allFilled, setAllFilled] = useState(false);
-
-  const Data = {
-    Name: name,
-    Surname: surname,
-    Mail: Mail,
-    Phone: Phone,
+const ClaimForm = (props) => {
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    if (props.props.allFilled) {
+      localStorage.setItem("topic", "Nowy zakup z odbiorem osobistym.");
+      localStorage.setItem("name", props.props.name);
+      localStorage.setItem("surname", props.props.surname);
+      localStorage.setItem("mail", props.props.mail);
+      localStorage.setItem("phone", props.props.phone);
+      localStorage.setItem("city", props.props.city);
+      localStorage.setItem("postal", props.props.postal);
+      localStorage.setItem("address1", props.props.address1);
+      localStorage.setItem("address2", props.props.address2);
+      navigate("/payment");
+    }
   };
 
-  const navigate = useNavigate();
+  const changeValues = () => {
+    props.setSubpage(0);
+    props.setPrice(5000);
+  };
 
   return (
     <OrderBackground>
-      <Order onSubmit={allFilled ? navigate("/payment") : ""}>
+      <Order onSubmit={handleSubmit}>
         <Row>
           <SingleInput
             fieldName={"Imię:"}
-            fieldValue={name}
-            setFieldName={setName}
+            fieldValue={props.props.name}
+            setFieldName={props.props.setName}
           />
           <SingleInput
             fieldName={"Nazwisko:"}
-            fieldValue={surname}
-            setFieldName={setSurname}
+            fieldValue={props.props.surname}
+            setFieldName={props.props.setSurname}
           />
         </Row>
         <Row>
           <SingleInput
             fieldName={"Adres e-mail:"}
-            fieldValue={Mail}
-            setFieldName={setMail}
+            fieldValue={props.props.mail}
+            setFieldName={props.props.setMail}
           />
           <SingleInput
             fieldName={"Numer telefonu:"}
-            fieldValue={Phone}
-            setFieldName={setPhone}
+            fieldValue={props.props.phone}
+            setFieldName={props.props.setPhone}
           />
         </Row>
 
@@ -164,21 +169,32 @@ const ClaimForm = () => {
           style={{ textDecoration: "none" }}
           onClick={() => {
             if (
-              (name !== "") &
-              (surname !== "") &
-              (Mail !== "") &
-              (Phone !== "")
+              (props.props.name !== "") &
+              (props.props.surname !== "") &
+              (props.props.mail !== "") &
+              (props.props.phone !== "")
             )
-              setAllFilled(true);
+              props.props.setAllFilled(true);
           }}
         >
           <span id="button-text">Przejdź do płatności</span>
         </PaymentButton>
-        <Link to="/order" style={{ textDecoration: "none" }}>
-          <InputText style={{ margin: "0.5em" }}>
+
+        <InputText style={{ margin: "0.5em" }}>
+          <Link
+            to=""
+            onClick={() => changeValues()}
+            style={{ textDecoration: "none", color: "white" }}
+          >
             Preferujesz dostawę do domu?
-          </InputText>
-        </Link>
+          </Link>
+        </InputText>
+        <InputText
+          style={{ fontSize: "1em", margin: "1em", textDecoration: "none" }}
+        >
+          *W przypadku dostawy poza teren Rybnika dochodzi dodatkowa opłata za
+          przesyłkę.
+        </InputText>
       </Order>
     </OrderBackground>
   );
