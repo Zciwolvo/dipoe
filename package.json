@@ -34,7 +34,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "npm install && concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
+        "start": "concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -54,8 +54,5 @@
     "runArgs": [
         "--env-file",
         ".src/secret.env"
-    ],
-    "optionalDependencies": {
-        "fsevents": "^2.3.2"
-    }
+    ]
 }
