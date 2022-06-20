@@ -48,32 +48,28 @@ const Final = ({ setCount }) => {
     if (performance.navigation.type === 1) {
       navigate("/");
     } else {
-      console.log("This page is not reloaded");
+      fetch("/send_mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          topic: localStorage.getItem("topic"),
+          receiver: localStorage.getItem("mail"),
+          Name: localStorage.getItem("name"),
+          Surname: localStorage.getItem("surname"),
+          City: localStorage.getItem("city"),
+          Phone: localStorage.getItem("phone"),
+          Postal: localStorage.getItem("postal"),
+          Address1: localStorage.getItem("address1"),
+          Address2: localStorage.getItem("address2"),
+        }),
+      }).then((res) => res.json());
+      fetch("/substract_cd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => setCount(data.cd_number));
     }
-  });
-
-  useEffect(() => {
-    fetch("/send_mail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        topic: localStorage.getItem("topic"),
-        receiver: localStorage.getItem("mail"),
-        Name: localStorage.getItem("name"),
-        Surname: localStorage.getItem("surname"),
-        City: localStorage.getItem("city"),
-        Phone: localStorage.getItem("phone"),
-        Postal: localStorage.getItem("postal"),
-        Address1: localStorage.getItem("address1"),
-        Address2: localStorage.getItem("address2"),
-      }),
-    }).then((res) => res.json());
-    fetch("/substract_cd", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => setCount(data.cd_number));
   }, []);
 
   return (

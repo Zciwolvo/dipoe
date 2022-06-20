@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-var http = require("http");
 require("dotenv").config();
 
 // This is your test secret API key.

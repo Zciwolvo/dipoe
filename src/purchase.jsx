@@ -100,22 +100,28 @@ const Button = styled.button`
   }
 `;
 
+const NumberText = styled.p`
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  height: auto;
+  font-family: "Amatic SC", cursive;
+  font-size: 3em;
+  color: white;
+  margin: 0;
+  text-shadow: 1px 1px 1px white;
+  @media (max-width: 720px) {
+    max-width: 90vw;
+  }
+`;
+
 const Purchase = (props) => {
   return (
     <Frame>
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Row>
         <Column>
-          <Text
-            style={{
-              width: "100%",
-              textAlign: "center",
-              maxWidth: "100%",
-              fontSize: "3em",
-            }}
-          >
-            POZOSTAŁO {props.count} PŁYT
-          </Text>
+          <NumberText>POZOSTAŁO {props.count} PŁYT</NumberText>
           <Cover src={CoverPhoto} />
           <Link to="/form" style={{ textDecoration: "none" }}>
             <Button>
