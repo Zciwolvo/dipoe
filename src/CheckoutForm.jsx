@@ -109,7 +109,7 @@ export default function CheckoutForm(props) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://dipoe.herokuapp.com/success",
+        return_url: "http://dipoe.pl/success",
       },
     });
 
