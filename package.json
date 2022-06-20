@@ -54,5 +54,8 @@
     "runArgs": [
         "--env-file",
         ".src/secret.env"
-    ]
+    ],
+    "optionalDependencies": {
+        "fsevents": "^2.3.2"
+    }
 }
