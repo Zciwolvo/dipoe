@@ -177,7 +177,10 @@ const ClaimForm = (props) => {
               props.props.setAllFilled(true);
           }}
         >
-          <span id="button-text">Przejdź do płatności</span>
+          <span id="button-text">
+            Przejdź do płatności <br /> (Po zakończonej płatności powróć do
+            strony)
+          </span>
         </PaymentButton>
 
         <InputText style={{ margin: "0.5em" }}>

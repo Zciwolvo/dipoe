@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HttpsRedirect from "react-https-redirect";
 
 import Homepage from "./home";
 import Purchase from "./purchase";
@@ -41,55 +42,57 @@ export default function App() {
   return (
     <div style={{ overflowX: "hidden" }}>
       <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              state ? (
-                <Homepage setState={setState} />
-              ) : (
-                <Purchase setState={setState} count={count} />
-              )
-            }
-          />
-          <Route
-            path="/form"
-            element={
-              <Transaction
-                props={{
-                  subpage: subpage,
-                  setSubpage: setSubpage,
-                  name: name,
-                  surname: surname,
-                  city: city,
-                  mail: mail,
-                  phone: phone,
-                  postal: postal,
-                  address1: address1,
-                  address2: address2,
-                  setName: setName,
-                  setSurname: setSurname,
-                  setCity: setCity,
-                  setMail: setMail,
-                  setPhone: setPhone,
-                  setPostal: setPostal,
-                  setAddress1: setAddress1,
-                  setAddress2: setAddress2,
-                  allFilled: allFilled,
-                  setAllFilled: setAllFilled,
-                  topic: topic,
-                  setTopic: setTopic,
-                  setPrice: setPrice,
-                }}
-              />
-            }
-          />
-          <Route
-            path="/payment"
-            element={<Payment props={{ mail: mail, price: price }} />}
-          />
-          <Route path="/success" element={<Final setCount={setCount} />} />
-        </Routes>
+        <HttpsRedirect>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                state ? (
+                  <Homepage setState={setState} />
+                ) : (
+                  <Purchase setState={setState} count={count} />
+                )
+              }
+            />
+            <Route
+              path="/form"
+              element={
+                <Transaction
+                  props={{
+                    subpage: subpage,
+                    setSubpage: setSubpage,
+                    name: name,
+                    surname: surname,
+                    city: city,
+                    mail: mail,
+                    phone: phone,
+                    postal: postal,
+                    address1: address1,
+                    address2: address2,
+                    setName: setName,
+                    setSurname: setSurname,
+                    setCity: setCity,
+                    setMail: setMail,
+                    setPhone: setPhone,
+                    setPostal: setPostal,
+                    setAddress1: setAddress1,
+                    setAddress2: setAddress2,
+                    allFilled: allFilled,
+                    setAllFilled: setAllFilled,
+                    topic: topic,
+                    setTopic: setTopic,
+                    setPrice: setPrice,
+                  }}
+                />
+              }
+            />
+            <Route
+              path="/payment"
+              element={<Payment props={{ mail: mail, price: price }} />}
+            />
+            <Route path="/success" element={<Final setCount={setCount} />} />
+          </Routes>
+        </HttpsRedirect>
       </Router>
     </div>
   );

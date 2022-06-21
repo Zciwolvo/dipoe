@@ -172,7 +172,8 @@ const Purchase = (props) => {
             -Oficjalne wlepy Dipoe <br />
             -Brelok DIPOE
             <br />
-            A to wszystko w preorderze za jedyne 39.99 (z dostawą 46.50).
+            A to wszystko w preorderze za jedyne 39.99 (z dostawą poza teren
+            Rybnika 46.50).
             <br />
             Za całość materiału w tym mastering odpowiadają autorzy.
             <br />
