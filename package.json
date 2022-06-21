@@ -1,7 +1,7 @@
 {
     "name": "dipoe",
     "homepage": "https://dipoe.pl/",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "engines": {
         "node": "14.17.6"
     },
@@ -34,7 +34,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
+        "start": "concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build && set HTTPS=true&&react-scripts start"
     },
     "eslintConfig": {
         "extends": "react-app"
