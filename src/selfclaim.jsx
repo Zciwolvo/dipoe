@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -13,6 +13,8 @@ const Order = styled.form`
   border-radius: 7px;
   padding: 40px;
   background-color: black;
+  max-width: 1440px;
+  margin: 0 auto;
   @media (max-width: 720px) {
     width: 90vw;
     min-width: 0;
@@ -24,12 +26,14 @@ const Order = styled.form`
 const OrderBackground = styled.div`
   width: 100vw;
   height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: url(${BackgroundPhoto});
 `;
+
 const Input = styled.input`
   border-radius: 10px;
   border: solid 1px;
@@ -115,6 +119,8 @@ const SingleInput = (props) => {
 };
 
 const ClaimForm = (props) => {
+  const [check, setCheck] = useState(false);
+
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (props.props.allFilled) {
@@ -164,6 +170,22 @@ const ClaimForm = (props) => {
           />
         </Row>
 
+        <Row
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginLeft: "0.5em",
+          }}
+        >
+          <Input
+            style={{ width: "50px" }}
+            type="checkbox"
+            onClick={() => setCheck(!check)}
+            required
+          />
+          <InputText>Po zakończeniu płatności powrócę do strony.</InputText>
+        </Row>
+
         <PaymentButton
           id="submit"
           style={{ textDecoration: "none" }}
@@ -172,7 +194,8 @@ const ClaimForm = (props) => {
               (props.props.name !== "") &
               (props.props.surname !== "") &
               (props.props.mail !== "") &
-              (props.props.phone !== "")
+              (props.props.phone !== "") &
+              (check === true)
             )
               props.props.setAllFilled(true);
           }}

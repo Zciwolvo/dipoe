@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -13,6 +13,8 @@ const Order = styled.form`
   border-radius: 7px;
   padding: 40px;
   background-color: black;
+  max-width: 1440px;
+  margin: 0 auto;
   @media (max-width: 720px) {
     width: 90vw;
     min-width: 0;
@@ -116,6 +118,8 @@ const SingleInput = (props) => {
 };
 
 const OrderForm = (props) => {
+  const [check, setCheck] = useState(false);
+
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (props.props.allFilled) {
@@ -188,6 +192,21 @@ const OrderForm = (props) => {
             setFieldName={props.props.setAddress2}
           />
         </Row>
+        <Row
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginLeft: "0.5em",
+          }}
+        >
+          <Input
+            style={{ width: "50px" }}
+            type="checkbox"
+            onClick={() => setCheck(!check)}
+            required
+          />
+          <InputText>Po zakończeniu płatności powrócę do strony.</InputText>
+        </Row>
 
         <PaymentButton
           id="submit"
@@ -201,7 +220,8 @@ const OrderForm = (props) => {
               (props.props.phone !== "") &
               (props.props.postal !== "") &
               (props.props.address1 !== "") &
-              (props.props.address2 !== "")
+              (props.props.address2 !== "") &
+              (check === true)
             )
               props.props.setAllFilled(true);
           }}
