@@ -93,7 +93,7 @@ app.post("/send_mail", cors(), async(req, res) => {
     });
     console.log("Mail sent!");
 });
-var count = 185;
+var count = 182;
 app.post("/get_data", async(req, res) => {
     res.send({
         cd_number: count,
