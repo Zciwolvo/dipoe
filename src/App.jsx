@@ -35,7 +35,6 @@ export default function App() {
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
   const [topic, setTopic] = useState("");
-  const [sent, setSent] = useState(false);
 
   const [allFilled, setAllFilled] = useState(false);
 

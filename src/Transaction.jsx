@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import OrderForm from "./OrderForm";
-import Payment from "./Payment";
 import ClaimForm from "./selfclaim";
 
 const Sub = [OrderForm, ClaimForm];

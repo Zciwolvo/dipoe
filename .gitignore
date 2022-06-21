@@ -13,6 +13,9 @@
 
 # misc
 .DS_Store
+.env
+crt.txt
+kp.txt
 
 npm-debug.log*
 yarn-debug.log*
