@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import BackgroundPhoto from "./src/background2.png";
 
@@ -40,18 +41,41 @@ const Text = styled.p`
   }
 `;
 
-const Final = () => {
+const Button = styled.button`
+  width: 100%;
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid white;
+  background-color: transparent;
+  margin-top: 3em;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 55px white;
+    cursor: pointer;
+  }
+  @media (max-width: 720px) {
+    max-width: 90vw;
+    margin-bottom: 5em;
+  }
+`;
+
+const Failure = () => {
   return (
     <Frame>
-      <Text>Dziękujemy za zakup! </Text>
       <Text>
-        Właśnie wydałeś równowartość Rybnickiego chemola na coś co wykręci cię
-        jeszcze bardziej.{" "}
+        Z jakiegoś powodu transakcja nie powiodła się proszę spróbować ponownie.
       </Text>
-      <Text>STOP NARKOMANII!</Text>
-      <Text>DIPOE pozdrawia 2 + 5 = 7</Text>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <Button>
+          <Text>Powrót do strony głównej.</Text>
+        </Button>
+      </Link>
     </Frame>
   );
 };
 
-export default Final;
+export default Failure;

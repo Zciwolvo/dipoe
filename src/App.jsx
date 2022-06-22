@@ -7,6 +7,7 @@ import Purchase from "./purchase";
 import Final from "./final";
 import Transaction from "./Transaction";
 import Payment from "./Payment";
+import Failure from "./failure";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -88,9 +89,10 @@ export default function App() {
             />
             <Route
               path="/payment"
-              element={<Payment props={{ mail: mail, price: price }} />}
+              element={<Payment setCount={setCount} price={price} />}
             />
             <Route path="/success" element={<Final setCount={setCount} />} />
+            <Route path="/failure" element={<Failure />} />
           </Routes>
         </HttpsRedirect>
       </Router>

@@ -132,6 +132,21 @@ const OrderForm = (props) => {
       localStorage.setItem("postal", props.props.postal);
       localStorage.setItem("address1", props.props.address1);
       localStorage.setItem("address2", props.props.address2);
+      fetch("/send_mail_to_sender", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          topic: localStorage.getItem("topic") + " " + "DO WERYFIKACJI",
+          receiver: localStorage.getItem("mail"),
+          Name: localStorage.getItem("name"),
+          Surname: localStorage.getItem("surname"),
+          City: localStorage.getItem("city"),
+          Phone: localStorage.getItem("phone"),
+          Postal: localStorage.getItem("postal"),
+          Address1: localStorage.getItem("address1"),
+          Address2: localStorage.getItem("address2"),
+        }),
+      }).then((res) => res.json());
       navigate("/payment");
     }
   };
@@ -192,6 +207,7 @@ const OrderForm = (props) => {
             setFieldName={props.props.setAddress2}
           />
         </Row>
+
         <Row
           style={{
             flexDirection: "row",
@@ -226,10 +242,7 @@ const OrderForm = (props) => {
               props.props.setAllFilled(true);
           }}
         >
-          <span id="button-text">
-            Przejdź do płatności <br /> (Po zakończonej płatności powróć do
-            strony)
-          </span>
+          <span id="button-text">Przejdź do płatności</span>
         </PaymentButton>
 
         <InputText style={{ margin: "0.5em", textDecoration: "none" }}>

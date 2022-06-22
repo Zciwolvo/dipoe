@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import {
   PaymentElement,
   useStripe,
@@ -57,7 +58,7 @@ const PaymentMessage = styled.div`
   text-align: center;
 `;
 
-export default function CheckoutForm(props) {
+export default function CheckoutForm({ setCount }) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -80,6 +81,7 @@ export default function CheckoutForm(props) {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
+          PaymentSuccess();
           setMessage("Payment succeeded!");
           break;
         case "processing":
@@ -87,13 +89,55 @@ export default function CheckoutForm(props) {
           break;
         case "requires_payment_method":
           setMessage("Your payment was not successful, please try again.");
+          PaymentFailure();
           break;
         default:
           setMessage("Something went wrong.");
+          PaymentFailure();
           break;
       }
     });
   }, [stripe]);
+
+  const navigate = useNavigate();
+
+  const PaymentSuccess = () => {
+    fetch("/send_mail_to_sender", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        topic: localStorage.getItem("topic") + " " + "ZWERYFIKOWANY",
+        receiver: localStorage.getItem("mail"),
+        Name: localStorage.getItem("name"),
+        Surname: localStorage.getItem("surname"),
+        City: localStorage.getItem("city"),
+        Phone: localStorage.getItem("phone"),
+        Postal: localStorage.getItem("postal"),
+        Address1: localStorage.getItem("address1"),
+        Address2: localStorage.getItem("address2"),
+      }),
+    }).then((res) => res.json());
+
+    fetch("/send_mail_to_receiver", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        receiver: localStorage.getItem("mail"),
+      }),
+    }).then((res) => res.json());
+
+    fetch("/substract_cd", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => setCount(data.cd_number));
+    navigate("/success");
+  };
+
+  const PaymentFailure = () => {
+    navigate("/failure");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -109,7 +153,7 @@ export default function CheckoutForm(props) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://www.dipoe.pl/success",
+        return_url: "https://www.dipoe.pl/payment",
       },
     });
 

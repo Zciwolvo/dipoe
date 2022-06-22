@@ -33,7 +33,40 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.post("/send_mail", cors(), async(req, res) => {
+app.post("/send_mail_to_receiver", cors(), async(req, res) => {
+    var receiver = req.body.receiver;
+
+    const transport = nodemailer.createTransport({
+        service: "Gmail",
+        auth: {
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASS,
+        },
+    });
+
+    await transport.sendMail({
+        from: process.env.MAIL_FROM,
+        to: receiver,
+        subject: "Zakup płyty DIPOE",
+        html: `<div className="email" style="
+        border: 1px solid black;
+        padding: 20px;
+        font-family: sans-serif;
+        line-height: 2;
+        font-size: 20px; 
+        ">
+        <h2>Dziękujemy!</h2>
+        <p>Twój zakup został przez nas odebrany.</p>
+        <p>Proszę oczekiwać dalszego kontaktu na numer telefonu lub adres email podane w formularzu.</p>
+        
+        <p>Ekipa DIPOE</p>
+         </div>
+    `,
+    });
+    console.log("Mail sent to receiver!");
+});
+
+app.post("/send_mail_to_sender", cors(), async(req, res) => {
     var topic = req.body.topic;
     var receiver = req.body.receiver;
     var Name = req.body.Name;
@@ -72,28 +105,11 @@ app.post("/send_mail", cors(), async(req, res) => {
          </div>
     `,
     });
-    await transport.sendMail({
-        from: process.env.MAIL_FROM,
-        to: receiver,
-        subject: "Zakup płyty DIPOE",
-        html: `<div className="email" style="
-        border: 1px solid black;
-        padding: 20px;
-        font-family: sans-serif;
-        line-height: 2;
-        font-size: 20px; 
-        ">
-        <h2>Dziękujemy!</h2>
-        <p>Twój zakup został przez nas odebrany.</p>
-        <p>Proszę oczekiwać dalszego kontaktu na numer telefonu lub adres email podane w formularzu.</p>
-        
-        <p>Ekipa DIPOE</p>
-         </div>
-    `,
-    });
-    console.log("Mail sent!");
+
+    console.log("Mail sent to sender!");
 });
-var count = 182;
+
+var count = 176;
 app.post("/get_data", async(req, res) => {
     res.send({
         cd_number: count,
