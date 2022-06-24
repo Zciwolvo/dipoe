@@ -109,7 +109,7 @@ app.post("/send_mail_to_sender", cors(), async(req, res) => {
     console.log("Mail sent to sender!");
 });
 
-var count = 174;
+var count = 173;
 app.post("/get_data", async(req, res) => {
     res.send({
         cd_number: count,
