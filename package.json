@@ -3,7 +3,7 @@
     "homepage": "https://dipoe.pl/",
     "version": "1.0.0",
     "engines": {
-        "node": "16.15.1"
+        "node": "16.x.x"
     },
     "dependencies": {
         "-": "^0.0.1",
