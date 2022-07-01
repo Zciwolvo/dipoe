@@ -34,6 +34,10 @@
         "src": "server.js",
         "use": "@vercel/node"
     }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "/index.js"
+    }],
     "scripts": {
         "start-client": "react-scripts start",
         "start-server": "node server.js",
