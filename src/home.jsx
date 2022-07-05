@@ -87,6 +87,7 @@ const BottomText = styled.h1`
   @media (max-width: 720px) {
     max-width: 90vw;
     text-align: center;
+    right: auto;
   }
 `;
 
