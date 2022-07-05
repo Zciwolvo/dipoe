@@ -33,6 +33,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+//`${process.env.REACT_APP_API_ENDPOINT}`
 app.post("/send_mail_to_receiver", cors(), async(req, res) => {
     var receiver = req.body.receiver;
 
@@ -110,7 +111,7 @@ app.post("/send_mail_to_sender", cors(), async(req, res) => {
 });
 
 var count = 173;
-app.post("/get_data", async(req, res) => {
+app.post(`${process.env.REACT_APP_API_ENDPOINT}/get_data`, async(req, res) => {
     res.send({
         cd_number: count,
     });
