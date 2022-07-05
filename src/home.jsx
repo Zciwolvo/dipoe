@@ -4,6 +4,7 @@ import styled from "styled-components";
 import BackgroundPhoto from "./src/background2.png";
 import DipoeLogo from "./src/logo.png";
 import CoverPhoto from "./src/disc.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Frame = styled.div`
   display: flex;
@@ -68,7 +69,30 @@ const Header = styled.h1`
   }
 `;
 
+const BottomText = styled.h1`
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+  width: auto;
+  height: auto;
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  color: white;
+  align-items: flex-end;
+  justify-content: end;
+  :hover {
+    cursor: pointer;
+    text-shadow: 0 0 5px #fff, 0 0 10px;
+  }
+  @media (max-width: 720px) {
+    max-width: 90vw;
+    text-align: center;
+  }
+`;
+
 const Homepage = (props) => {
+  const navigate = useNavigate();
+
   return (
     <Frame>
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
@@ -78,6 +102,7 @@ const Homepage = (props) => {
           DIPOE - ,,2+5=7ʼʼ (PREORDER)
         </Header>
       </Column>
+      <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
     </Frame>
   );
 };

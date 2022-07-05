@@ -8,6 +8,7 @@ import Final from "./final";
 import Transaction from "./Transaction";
 import Payment from "./Payment";
 import Failure from "./failure";
+import Rules from "./rules";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -55,6 +56,7 @@ export default function App() {
                 )
               }
             />
+            <Route path="/rules" element={<Rules />} />
             <Route
               path="/form"
               element={
