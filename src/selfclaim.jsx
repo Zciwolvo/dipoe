@@ -133,7 +133,7 @@ const ClaimForm = (props) => {
       localStorage.setItem("postal", props.props.postal);
       localStorage.setItem("address1", props.props.address1);
       localStorage.setItem("address2", props.props.address2);
-      fetch("/send_mail_to_sender", {
+      fetch(`${process.env.API_ENDPOINT}api/send_mail_to_sender`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

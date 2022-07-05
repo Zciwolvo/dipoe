@@ -14,41 +14,47 @@ const PORT = process.env.PORT || 4242;
 app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
-app.post("/create-payment-intent", async(req, res) => {
-    // Create a PaymentIntent with the order amount and currency
-    var price = req.body.price;
-    const paymentIntent = await stripe.paymentIntents.create({
-        amount: price,
-        currency: "pln",
-        payment_method_types: ["card", "p24"],
-    });
+app.post(
+    `${process.env.API_ENDPOINT}api/create-payment-intent`,
+    async(req, res) => {
+        // Create a PaymentIntent with the order amount and currency
+        var price = req.body.price;
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: price,
+            currency: "pln",
+            payment_method_types: ["card", "p24"],
+        });
 
-    res.send({
-        clientSecret: paymentIntent.client_secret,
-    });
-});
+        res.send({
+            clientSecret: paymentIntent.client_secret,
+        });
+    }
+);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
 
-app.post("/send_mail_to_receiver", cors(), async(req, res) => {
-    var receiver = req.body.receiver;
+app.post(
+    `${process.env.API_ENDPOINT}api/send_mail_to_receiver`,
+    cors(),
+    async(req, res) => {
+        var receiver = req.body.receiver;
 
-    const transport = nodemailer.createTransport({
-        service: "Gmail",
-        auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS,
-        },
-    });
+        const transport = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS,
+            },
+        });
 
-    await transport.sendMail({
-        from: process.env.MAIL_FROM,
-        to: receiver,
-        subject: "Zakup płyty DIPOE",
-        html: `<div className="email" style="
+        await transport.sendMail({
+            from: process.env.MAIL_FROM,
+            to: receiver,
+            subject: "Zakup płyty DIPOE",
+            html: `<div className="email" style="
         border: 1px solid black;
         padding: 20px;
         font-family: sans-serif;
@@ -62,34 +68,38 @@ app.post("/send_mail_to_receiver", cors(), async(req, res) => {
         <p>Ekipa DIPOE</p>
          </div>
     `,
-    });
-    console.log("Mail sent to receiver!");
-});
+        });
+        console.log("Mail sent to receiver!");
+    }
+);
 
-app.post("/send_mail_to_sender", cors(), async(req, res) => {
-    var topic = req.body.topic;
-    var receiver = req.body.receiver;
-    var Name = req.body.Name;
-    var Surname = req.body.Surname;
-    var City = req.body.City;
-    var Phone = req.body.Phone;
-    var Postal = req.body.Postal;
-    var Address1 = req.body.Address1;
-    var Address2 = req.body.Address2;
+app.post(
+    `${process.env.API_ENDPOINT}api/send_mail_to_sender`,
+    cors(),
+    async(req, res) => {
+        var topic = req.body.topic;
+        var receiver = req.body.receiver;
+        var Name = req.body.Name;
+        var Surname = req.body.Surname;
+        var City = req.body.City;
+        var Phone = req.body.Phone;
+        var Postal = req.body.Postal;
+        var Address1 = req.body.Address1;
+        var Address2 = req.body.Address2;
 
-    const transport = nodemailer.createTransport({
-        service: "Gmail",
-        auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS,
-        },
-    });
+        const transport = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS,
+            },
+        });
 
-    await transport.sendMail({
-        from: process.env.MAIL_FROM,
-        to: "dipoeone@gmail.com",
-        subject: topic,
-        html: `<div className="email" style="
+        await transport.sendMail({
+            from: process.env.MAIL_FROM,
+            to: "zciwolvo@gmail.com",
+            subject: topic,
+            html: `<div className="email" style="
         border: 1px solid black;
         padding: 20px;
         font-family: sans-serif;
@@ -104,19 +114,20 @@ app.post("/send_mail_to_sender", cors(), async(req, res) => {
         <p>${City}, ${Postal}, ${Address1}/${Address2}</p>
          </div>
     `,
-    });
+        });
 
-    console.log("Mail sent to sender!");
-});
+        console.log("Mail sent to sender!");
+    }
+);
 
 var count = 173;
-app.post("/get_data", async(req, res) => {
+app.post(`${process.env.API_ENDPOINT}api/get_data`, async(req, res) => {
     res.send({
         cd_number: count,
     });
 });
 
-app.post("/substract_cd", async(req, res) => {
+app.post(`${process.env.API_ENDPOINT}api/substract_cd`, async(req, res) => {
     count -= 1;
     res.send({
         cd_number: count,
