@@ -37,7 +37,6 @@ export default function Payment({ setCount, price }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price: price }),
     })
-      .then((res) => console.log(res))
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
