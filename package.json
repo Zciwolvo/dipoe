@@ -32,11 +32,10 @@
     },
     "scripts": {
         "start-client": "react-scripts start",
-        "start-server": "node server.js",
         "build": "react-scripts build",
         "test": "react-scripts test --passWithNoTests",
         "eject": "react-scripts eject",
-        "start": "concurrently \"npm run start-client\" \"npm run start-server\" && npm run build && serve -s build"
+        "start": "npm run start-client && npm run build"
     },
     "eslintConfig": {
         "extends": "react-app"

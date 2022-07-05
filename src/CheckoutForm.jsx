@@ -153,7 +153,7 @@ export default function CheckoutForm({ setCount }) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://dipoe.vercel.app/success",
+        return_url: "https://dipoe.vercel.app/payment",
       },
     });
 
