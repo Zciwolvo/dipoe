@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const corsOptions = {
+    origin: "*",
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+};
+
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -36,7 +42,7 @@ app.post(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.post(
     `${process.env.REACT_APP_API_ENDPOINT}send_mail_to_receiver`,
