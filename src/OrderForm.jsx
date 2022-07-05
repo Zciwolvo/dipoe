@@ -132,7 +132,7 @@ const OrderForm = (props) => {
       localStorage.setItem("postal", props.props.postal);
       localStorage.setItem("address1", props.props.address1);
       localStorage.setItem("address2", props.props.address2);
-      fetch(`${process.env.API_ENDPOINT}/send_mail_to_sender`, {
+      fetch("/send_mail_to_sender", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -102,7 +102,7 @@ export default function CheckoutForm({ setCount }) {
   const navigate = useNavigate();
 
   const PaymentSuccess = () => {
-    fetch(`${process.env.API_ENDPOINT}/send_mail_to_sender`, {
+    fetch("/send_mail_to_sender", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -118,7 +118,7 @@ export default function CheckoutForm({ setCount }) {
       }),
     }).then((res) => res.json());
 
-    fetch(`${process.env.API_ENDPOINT}/send_mail_to_receiver`, {
+    fetch("/send_mail_to_receiver", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -126,7 +126,7 @@ export default function CheckoutForm({ setCount }) {
       }),
     }).then((res) => res.json());
 
-    fetch(`${process.env.API_ENDPOINT}/substract_cd`, {
+    fetch("/substract_cd", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })

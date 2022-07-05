@@ -32,7 +32,7 @@ export default function Payment({ setCount, price }) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(`${process.env.API_ENDPOINT}/create-payment-intent`, {
+    fetch("/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price: price }),
