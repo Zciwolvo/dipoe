@@ -20,7 +20,7 @@ export default function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/get_data`, {
+    fetch("/get_data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })

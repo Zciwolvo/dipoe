@@ -111,7 +111,7 @@ app.post("/send_mail_to_sender", cors(), async(req, res) => {
 });
 
 var count = 173;
-app.post(`${process.env.REACT_APP_API_ENDPOINT}/get_data`, async(req, res) => {
+app.post(`/get_data`, async(req, res) => {
     res.send({
         cd_number: count,
     });
