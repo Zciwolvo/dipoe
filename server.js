@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4242;
 app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
-app.post("/create-payment-intent", async(req, res) => {
+app.post(`/create-payment-intent`, async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
     var price = req.body.price;
     const paymentIntent = await stripe.paymentIntents.create({
@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //`${process.env.REACT_APP_API_ENDPOINT}`
-app.post("/send_mail_to_receiver", cors(), async(req, res) => {
+app.post(`/send_mail_to_receiver`, cors(), async(req, res) => {
     var receiver = req.body.receiver;
 
     const transport = nodemailer.createTransport({
@@ -67,7 +67,7 @@ app.post("/send_mail_to_receiver", cors(), async(req, res) => {
     console.log("Mail sent to receiver!");
 });
 
-app.post("/send_mail_to_sender", cors(), async(req, res) => {
+app.post(`/send_mail_to_sender`, cors(), async(req, res) => {
     var topic = req.body.topic;
     var receiver = req.body.receiver;
     var Name = req.body.Name;
@@ -117,7 +117,7 @@ app.post(`/get_data`, async(req, res) => {
     });
 });
 
-app.post("/substract_cd", async(req, res) => {
+app.post(`/substract_cd`, async(req, res) => {
     count -= 1;
     res.send({
         cd_number: count,
