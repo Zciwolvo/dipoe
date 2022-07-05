@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 4242;
 app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
+//`${process.env.REACT_APP_API_ENDPOINT}`
+
 app.post(`/create-payment-intent`, async(req, res) => {
     // Create a PaymentIntent with the order amount and currency
     var price = req.body.price;
@@ -33,7 +35,6 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-//`${process.env.REACT_APP_API_ENDPOINT}`
 app.post(`/send_mail_to_receiver`, cors(), async(req, res) => {
     var receiver = req.body.receiver;
 
@@ -111,7 +112,7 @@ app.post(`/send_mail_to_sender`, cors(), async(req, res) => {
 });
 
 var count = 173;
-app.post(`/get_data`, async(req, res) => {
+app.post(`${process.env.REACT_APP_API_ENDPOINT}get_data`, async(req, res) => {
     res.send({
         cd_number: count,
     });
