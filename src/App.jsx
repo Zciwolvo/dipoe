@@ -17,7 +17,7 @@ import Rules from "./rules";
 export default function App() {
   const [state, setState] = useState(true);
   const [subpage, setSubpage] = useState(1);
-  const [price, setPrice] = useState(3999);
+  const [price, setPrice] = useState(2999);
   const [count, setCount] = useState(0);
 
   useEffect(() => {

@@ -164,16 +164,8 @@ const Purchase = (props) => {
             </Text>
           </Row>
           <Text style={{ marginBottom: "5em" }}>
-            <br /> W ramach preorderu w płycie znajduje się:
-            <br /> -Totalnie przypadkowo wybrana odbitka zdjęcia z archiwum
-            prywatnego
-            <br /> -Podpisy członków zespołu
             <br />
-            -Oficjalne wlepy Dipoe <br />
-            -Brelok DIPOE
-            <br />
-            A to wszystko w preorderze za jedyne 39.99 (z dostawą poza teren
-            Rybnika 46.50).
+            Cena płyty to 29.99 (z dostawą poza teren Rybnik i okolic 36.50)
             <br />
             Za całość materiału w tym mastering odpowiadają autorzy.
             <br />

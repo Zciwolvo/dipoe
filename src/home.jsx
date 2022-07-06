@@ -89,6 +89,10 @@ const BottomText = styled.h1`
     text-align: center;
     right: auto;
   }
+  @media (max-height: 650px) {
+    max-width: 90vw;
+    position: relative;
+  }
 `;
 
 const Homepage = (props) => {
@@ -99,9 +103,7 @@ const Homepage = (props) => {
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Column>
         <Cover src={CoverPhoto} onClick={() => props.setState(false)} />
-        <Header onClick={() => props.setState(false)}>
-          DIPOE - ,,2+5=7ʼʼ (PREORDER)
-        </Header>
+        <Header onClick={() => props.setState(false)}>DIPOE - ,,2+5=7ʼʼ</Header>
       </Column>
       <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
     </Frame>
