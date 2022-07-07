@@ -49,9 +49,8 @@ const Rules = () => {
       <Text>
         Administratorem waszych danych osobowych jest MICHAŁ ZDRZAŁEK wraz z
         grupą DIPOE. <br />
-        Adres siedziby działalności <br />
-        Rybnik, 44-200, ul. Gliwicka 33 <br />W razie wszelkich pytań oraz
-        problemów prosimy dzwonić na numer telefonu <br /> +48 726 102 425
+        <br />W razie wszelkich pytań oraz problemów prosimy dzwonić na numer
+        telefonu <br /> +48 726 102 425
         <br />
         <br />
         W sprawie zwrotów proszę o kontakt na numer podany powyżej
