@@ -121,7 +121,6 @@ const Purchase = (props) => {
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Row>
         <Column>
-          <NumberText>POZOSTAŁO {props.count} PŁYT</NumberText>
           <Cover src={CoverPhoto} />
           <Link to="/form" style={{ textDecoration: "none" }}>
             <Button>
