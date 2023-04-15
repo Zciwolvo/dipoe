@@ -21,15 +21,6 @@ export default function App() {
   const [price, setPrice] = useState(2000);
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}get_data`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => setCount(data.cd_number));
-  }, []);
-
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [city, setCity] = useState("");
