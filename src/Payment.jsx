@@ -35,6 +35,7 @@ export default function Payment({ setCount, price }) {
     fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
       body: JSON.stringify({ price: price }),
     })
       .then((res) => res.json())
