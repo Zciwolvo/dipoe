@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import BackgroundPhoto from "./src/background2.png";
 import DipoeLogo from "./src/logo.png";
-import CoverPhoto from "./src/disc.jpg";
+import CoverPhoto from "./src/disc2.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Frame = styled.div`
@@ -103,7 +103,9 @@ const Homepage = (props) => {
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Column>
         <Cover src={CoverPhoto} onClick={() => props.setState(false)} />
-        <Header onClick={() => props.setState(false)}>DIPOE - ,,2+5=7ʼʼ</Header>
+        <Header onClick={() => props.setState(false)}>
+          DIPOE- 5 GRAM DOBRYCH NOWIN EP
+        </Header>
       </Column>
       <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
     </Frame>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import BackgroundPhoto from "./src/background2.png";
 import DipoeLogo from "./src/logo.png";
-import CoverPhoto from "./src/disc2.jpg";
+import CoverPhoto from "./src/disc.jpg";
 import { Link } from "react-router-dom";
 
 const Frame = styled.div`
@@ -130,23 +130,41 @@ const Purchase = (props) => {
         </Column>
         <Column>
           <Text>
-            NOWE WYDAWICTWO DIPOE Z OKAZJI PIĘKNEGO ŚWIĘTA. JAKIM JEST ŚWIATOWY
-            DZIEŃ KSIAZKI OBCHODZONY 23 KWIETNIA. ŻARTOWAŁEM <br />
+            Debiutancka płyta rybnickiego kolektywu DIPOE ,,2+5=7ʼʼ czyli
+            dźwięki z najwyższego punktu amplitudy schizofrenii pomieszane z
+            bazą tekstów generowanych przez stałych bywalców placówki na ulicy
+            Gliwickiej 33. <br />
             <br />
             TRACKLISTA
           </Text>
           <Row style={{ width: "30em" }}>
             <Text>
-              <br /> 1. MARIHUANA
-              <br /> 2. BIG QTANG
-              <br /> 3. KSIĄŻKI
-              <br /> 4. 5 LAT ODSIADKI
-              <br /> 5. ZAKOŁYSANIE
+              <br /> 1. iNtro <br />
+              2. Bruno Shulz Brał Acodin
+              <br /> 3. Podróż
+              <br /> 4. Uliczny Reportaż
+              <br /> 5. Bukareszt
+              <br /> 6. Zwykły Szary Dzień
+              <br />
+              7. Pozdrowienia (Skit)
+              <br /> 8. Pornstar
+              <br /> 9. Głowa
+            </Text>
+            <Text>
+              <br /> 10. Bang (Reggae Remix)
+              <br /> 11. Devil May Cry
+              <br /> 12. B.B King
+              <br /> 13. 100 1444
+              <br /> 14. Wlazł Kotek (Skit)
+              <br /> 15. Korytarze
+              <br /> 16. Do Jutra
+              <br /> 17. PKSM
+              <br /> 18. oUtro
             </Text>
           </Row>
-          <Text style={{ marginBottom: "10em" }}>
+          <Text style={{ marginBottom: "5em" }}>
             <br />
-            Cena płyty to 20pln
+            Cena płyty to 29.99 (z dostawą poza teren Rybnik i okolic 36.50)
             <br />
             Za całość materiału w tym mastering odpowiadają autorzy.
             <br />

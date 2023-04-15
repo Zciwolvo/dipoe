@@ -154,7 +154,7 @@ const ClaimForm = (props) => {
 
   const changeValues = () => {
     props.setSubpage(0);
-    props.setPrice(3650);
+    props.setPrice(2650);
   };
 
   return (

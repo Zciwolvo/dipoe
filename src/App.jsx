@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HttpsRedirect from "react-https-redirect";
+import "./App.css";
 
 import Homepage from "./home";
 import Purchase from "./purchase";
@@ -17,7 +18,7 @@ import Rules from "./rules";
 export default function App() {
   const [state, setState] = useState(true);
   const [subpage, setSubpage] = useState(1);
-  const [price, setPrice] = useState(2999);
+  const [price, setPrice] = useState(2000);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
