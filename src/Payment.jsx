@@ -60,7 +60,7 @@ export default function Payment({ setCount, price }) {
     <CardPayment className="App">
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
+          <CheckoutForm setCount={setCount} />
         </Elements>
       )}
     </CardPayment>
