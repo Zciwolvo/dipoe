@@ -55,12 +55,8 @@ export default function Payment({ setCount, price }) {
   };
 
   return (
-    <CardPayment className="App">
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
-        </Elements>
-      )}
-    </CardPayment>
+    <Elements stripe={stripePromise} options={options}>
+      <CheckoutForm />
+    </Elements>
   );
 }
