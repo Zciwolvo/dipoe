@@ -34,7 +34,7 @@ export default function Payment({ setCount, price }) {
     // Create PaymentIntent as soon as the page loads
     fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
       method: "POST",
-      mode: "no-cors",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
