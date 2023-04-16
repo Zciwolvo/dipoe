@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js/pure";
+import { Elements } from "@stripe/react-stripe-js/pure";
 import styled from "styled-components";
 
 import CheckoutForm from "./CheckoutForm";
