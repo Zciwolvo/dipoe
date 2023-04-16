@@ -23,7 +23,7 @@ const CardPayment = styled.div`
   }
 `;
 
-const stripe_public = `${process.env.REACT_APP_STRIPE_PROMISE}`;
+const stripe_public = `pk_test_51L7nq8GOhLaGDHrE7hkowuhV2dhw6EOf7jl9UPRzJ7Akc0X7zE9uobgJGYuyImCD7tNnGTULhZ436Sd3X0bT4Bwc00vBTZAllM`;
 
 const stripePromise = loadStripe(stripe_public);
 
