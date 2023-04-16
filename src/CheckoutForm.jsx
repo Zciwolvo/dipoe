@@ -102,7 +102,7 @@ export default function CheckoutForm({ setCount }) {
   const navigate = useNavigate();
 
   const PaymentSuccess = () => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}send_mail_to_sender`, {
+    fetch(`$http://127.0.0.1:5000/send_mail_to_sender`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -118,7 +118,7 @@ export default function CheckoutForm({ setCount }) {
       }),
     }).then((res) => res.json());
 
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}send_mail_to_receiver`, {
+    fetch(`http://127.0.0.1:5000/send_mail_to_receiver`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -126,7 +126,7 @@ export default function CheckoutForm({ setCount }) {
       }),
     }).then((res) => res.json());
 
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}substract_cd`, {
+    fetch(`http://127.0.0.1:5000/substract_cd`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })
