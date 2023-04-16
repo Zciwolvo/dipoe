@@ -30,13 +30,18 @@ const stripePromise = loadStripe(stripe_public);
 export default function Payment({ setCount, price }) {
   const [clientSecret, setClientSecret] = useState("");
 
+  var allowedOrigins = [
+    "http://localhost:3000",
+    "https://dipoe.pl",
+    "https://dipoe-git-developer-zciwolvo.vercel.app",
+  ];
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": allowedOrigins,
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers":
           "Origin, X-Requested-With, Content-Type, Accept",
