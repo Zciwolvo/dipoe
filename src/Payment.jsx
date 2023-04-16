@@ -23,9 +23,11 @@ const CardPayment = styled.div`
   }
 `;
 
-const stripe_public = `pk_test_51L7nq8GOhLaGDHrE7hkowuhV2dhw6EOf7jl9UPRzJ7Akc0X7zE9uobgJGYuyImCD7tNnGTULhZ436Sd3X0bT4Bwc00vBTZAllM`;
+const stripe_public = `${process.env.REACT_APP_STRIPE_PROMISE}`;
 
-const stripePromise = loadStripe(stripe_public);
+const stripePromise = loadStripe(
+  spk_test_51L7nq8GOhLaGDHrE7hkowuhV2dhw6EOf7jl9UPRzJ7Akc0X7zE9uobgJGYuyImCD7tNnGTULhZ436Sd3X0bT4Bwc00vBTZAllM
+);
 
 export default function Payment({ setCount, price }) {
   const [clientSecret, setClientSecret] = useState("");
@@ -48,7 +50,7 @@ export default function Payment({ setCount, price }) {
     labels: "floating",
   };
   const options = {
-    payment_intent_client_secret: clientSecret,
+    clientSecret,
     appearance,
   };
 
