@@ -34,7 +34,6 @@ export default function Payment({ setCount, price }) {
     // Create PaymentIntent as soon as the page loads
     fetch(`http://127.0.0.1:5000/create-payment-intent`, {
       method: "POST",
-      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -49,7 +48,7 @@ export default function Payment({ setCount, price }) {
     labels: "floating",
   };
   const options = {
-    clientSecret,
+    payment_intent_client_secret: clientSecret,
     appearance,
   };
 
