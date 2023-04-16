@@ -25,19 +25,21 @@ const CardPayment = styled.div`
 
 const stripe_public = `${process.env.REACT_APP_STRIPE_PROMISE}`;
 
-const stripePromise = loadStripe(
-  spk_test_51L7nq8GOhLaGDHrE7hkowuhV2dhw6EOf7jl9UPRzJ7Akc0X7zE9uobgJGYuyImCD7tNnGTULhZ436Sd3X0bT4Bwc00vBTZAllM
-);
+const stripePromise = loadStripe(stripe_public);
 
 export default function Payment({ setCount, price }) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(`http://127.0.0.1:5000/create-payment-intent`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
       },
       body: JSON.stringify({ price: price }),
     })
@@ -50,13 +52,17 @@ export default function Payment({ setCount, price }) {
     labels: "floating",
   };
   const options = {
-    clientSecret: clientSecret,
+    clientSecret,
     appearance,
   };
 
   return (
-    <Elements stripe={stripePromise} options={options}>
-      <CheckoutForm />
-    </Elements>
+    <CardPayment className="App">
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
+        </Elements>
+      )}
+    </CardPayment>
   );
 }
