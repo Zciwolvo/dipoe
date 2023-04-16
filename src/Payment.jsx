@@ -50,7 +50,7 @@ export default function Payment({ setCount, price }) {
     labels: "floating",
   };
   const options = {
-    clientSecret,
+    clientSecret: clientSecret,
     appearance,
   };
 
