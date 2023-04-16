@@ -32,7 +32,7 @@ export default function Payment({ setCount, price }) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
+    fetch(`http://127.0.0.1:5000/create-payment-intent`, {
       method: "POST",
       mode: "cors",
       headers: {
