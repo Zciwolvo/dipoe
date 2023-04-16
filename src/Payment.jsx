@@ -41,11 +41,6 @@ export default function Payment({ setCount, price }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":
-          "https://dipoe-git-developer-zciwolvo.vercel.app",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers":
-          "Origin, X-Requested-With, Content-Type, Accept",
       },
       body: JSON.stringify({ price: price }),
     })
