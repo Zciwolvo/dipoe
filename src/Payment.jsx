@@ -31,7 +31,6 @@ export default function Payment({ setCount, price }) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
     fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
       method: "POST",
       headers: {
@@ -41,7 +40,7 @@ export default function Payment({ setCount, price }) {
         "Access-Control-Allow-Headers":
           "Origin, X-Requested-With, Content-Type, Accept",
       },
-      body: JSON.stringify({ price: price }),
+      body: JSON.stringify({ price }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
@@ -58,9 +57,11 @@ export default function Payment({ setCount, price }) {
 
   return (
     <CardPayment className="App">
-      <Elements options={options} stripe={stripePromise}>
-        <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
-      </Elements>
+      {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
+        </Elements>
+      )}
     </CardPayment>
   );
 }
