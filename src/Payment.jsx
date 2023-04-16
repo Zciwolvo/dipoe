@@ -37,6 +37,7 @@ export default function Payment({ setCount, price }) {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${stripe_public}`,
       },
       body: JSON.stringify({ price: price }),
     })
