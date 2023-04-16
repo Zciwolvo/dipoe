@@ -32,16 +32,14 @@ export default function Payment({ setCount, price }) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(
-      `https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ price: price }),
-      }
-    )
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}create-payment-intent`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ price: price }),
+    })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
