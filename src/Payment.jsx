@@ -40,10 +40,7 @@ export default function Payment({ setCount, price }) {
       },
       body: JSON.stringify({ price: price }),
     })
-      .then((res) => {
-        res.json();
-        window.location.href = res.url;
-      })
+      .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
 
