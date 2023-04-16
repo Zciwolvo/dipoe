@@ -37,7 +37,6 @@ export default function Payment({ setCount, price }) {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${stripe_public}`,
       },
       body: JSON.stringify({ price: price }),
     })
@@ -58,7 +57,7 @@ export default function Payment({ setCount, price }) {
     <CardPayment className="App">
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm setCount={setCount} />
+          <CheckoutForm clientSecret={clientSecret} setCount={setCount} />
         </Elements>
       )}
     </CardPayment>
