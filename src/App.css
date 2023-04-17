@@ -4,10 +4,6 @@
   pointer-events: auto;
 }
 
-iframe {
-  pointer-events: none;
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
