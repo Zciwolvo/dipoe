@@ -14,6 +14,7 @@ const CardPayment = styled.div`
   align-items: center;
   justify-content: center;
   background-image: url(${BackgroundPhoto});
+  pointer-events: none;
   @media (max-width: 720px) {
     width: 100vw;
     min-width: 0;
@@ -21,6 +22,9 @@ const CardPayment = styled.div`
     overflow-y: hidden;
     overflow-x: hidden;
   }
+`;
+const iframe = styled.div`
+  pointer-events: none;
 `;
 
 const stripe_public = `${process.env.REACT_APP_STRIPE_PROMISE}`;
