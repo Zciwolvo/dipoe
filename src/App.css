@@ -1,6 +1,7 @@
 #root {
   display: flex;
   align-items: center;
+  pointer-events: auto;
 }
 
 iframe {
