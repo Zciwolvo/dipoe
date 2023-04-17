@@ -153,7 +153,7 @@ export default function CheckoutForm({ setCount }) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://www.dipoe.pl/payment",
+        return_url: "https://dipoe-git-developer-zciwolvo.vercel.app/payment",
       },
     });
 
