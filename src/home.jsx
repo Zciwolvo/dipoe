@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import BackgroundPhoto from "./src/background2.png";
 import DipoeLogo from "./src/logo.png";
-import CoverPhoto from "./src/disc2.jpg";
+import CoverPhoto from "./src/hiperrealizm.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Frame = styled.div`
@@ -38,14 +38,17 @@ const Logo = styled.img`
 `;
 
 const Cover = styled.img`
-  width: 40%;
+  width: 60%;
   height: auto;
+  margin: 2em 0 4em 0;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+  border: none;
   :hover {
     outline: none;
     border-color: white;
-    box-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 15px #ffffff,
-      0 0 20px #ffffff, 0 0 30px #ffffff;
-    cursor: pointer;
+    box-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    transform: scale(1.05);
   }
   @media (max-width: 720px) {
     width: 60vw;
@@ -104,7 +107,7 @@ const Homepage = (props) => {
       <Column>
         <Cover src={CoverPhoto} onClick={() => props.setState(false)} />
         <Header onClick={() => props.setState(false)}>
-          DIPOE- 5 GRAM DOBRYCH NOWIN EP
+          DIPOE - hiperrealizm
         </Header>
       </Column>
       <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
