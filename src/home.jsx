@@ -120,6 +120,9 @@ const Homepage = (props) => {
       <Logo src={DipoeLogo} onClick={() => props.setState(true)} />
       <Column>
         <Cover src={CoverPhoto} onClick={() => props.setState(false)} />
+        <Header style={{marginBottom: "-1em"}} onClick={() => props.setState(false)}>
+        05.02.2024
+        </Header>
         <Header onClick={() => props.setState(false)}>
           DIPOE - hiperrealizm
         </Header>

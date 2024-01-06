@@ -183,6 +183,8 @@ const Purchase = (props) => {
             <br />
             Cena preorderu to 59.99PLN
             <br />
+            Premiera: 05.02.2024
+            <br />
             <br />
             Za całośc materiały odpowiadają autorzy. Nagrania odbywały się w DIPOE HOME QRWA STUDIO a nagrywaniem płyt zajęło się SZASTA INC. Wszelkie prawa zastrzeżone do czasu az nie wykorkujemy potem robcie z tym gównem co chcecie. <br />{" "}
             <br /> 2+5=7 <br />
