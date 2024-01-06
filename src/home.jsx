@@ -105,9 +105,10 @@ const BottomText = styled.h1`
     text-align: center;
     right: auto;
   }
-  @media (max-height: 650px) {
+  @media (max-height: 800px) {
     max-width: 90vw;
     position: relative;
+    margin-top: 2em;
   }
 `;
 
