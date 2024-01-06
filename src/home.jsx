@@ -72,6 +72,19 @@ const Header = styled.h1`
   }
 `;
 
+const Text = styled.a`
+  max-width: 30vw;
+  height: auto;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  text-shadow: 1px 1px 1px white;
+  @media (max-width: 720px) {
+    max-width: 90vw;
+  }
+`;
+
 const BottomText = styled.h1`
   position: absolute;
   bottom: 1em;
@@ -109,6 +122,7 @@ const Homepage = (props) => {
         <Header onClick={() => props.setState(false)}>
           DIPOE - hiperrealizm
         </Header>
+        <Text href="https://allegrolokalnie.pl/oferta/dipoehiperrealizm-hyperdeluxe-preorder">LINK DO LICYTACJI WERSJI HYPERDELUXE</Text>
       </Column>
       <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
     </Frame>

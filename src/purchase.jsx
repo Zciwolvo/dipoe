@@ -78,6 +78,19 @@ const Text = styled.p`
   }
 `;
 
+const TextA = styled.a`
+  max-width: 30vw;
+  height: auto;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  text-shadow: 1px 1px 1px white;
+  @media (max-width: 720px) {
+    max-width: 90vw;
+  }
+`;
+
 const Button = styled.button`
   width: 100%;
   height: 5em;
@@ -131,6 +144,8 @@ const Purchase = (props) => {
         <Column>
           <Text>
             Przedstawiamy drugi longplay DIPOE ,,hiperrealizm", materiał zrealizowany w kilkukrotnie lepszej jakości niż poprzednie wydania (chyba).. <br />
+            <TextA href="https://allegrolokalnie.pl/oferta/dipoehiperrealizm-hyperdeluxe-preorder">LINK DO LICYTACJI WERSJI HYPERDELUXE</TextA>
+            <br />
             <br />
             TRACKLISTA
           </Text>
@@ -171,7 +186,7 @@ const Purchase = (props) => {
             <br />
             Za całośc materiały odpowiadają autorzy. Nagrania odbywały się w DIPOE HOME QRWA STUDIO a nagrywaniem płyt zajęło się SZASTA INC. Wszelkie prawa zastrzeżone do czasu az nie wykorkujemy potem robcie z tym gównem co chcecie. <br />{" "}
             <br /> 2+5=7 <br />
-            <br /> ©℗ DIPOE 2022
+            <br /> ©℗ DIPOE 2024
           </Text>
         </Column>
       </Row>
