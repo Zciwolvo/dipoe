@@ -55,7 +55,7 @@ const Rules = () => {
         <br />
         W sprawie zwrotów proszę o kontakt na numer podany powyżej
         <br />
-        Cena płyty w preorderze to 29.99pln + dostawa 6.50pln
+        Cena płyty w preorderze to 59.99pln + dostawa 15pln
         <br />
         <br />
         Jebać disa i z fartem wariaty
