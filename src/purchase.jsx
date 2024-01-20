@@ -144,7 +144,6 @@ const Purchase = (props) => {
         <Column>
           <Text>
             Przedstawiamy drugi longplay DIPOE ,,hiperrealizm", materiał zrealizowany w kilkukrotnie lepszej jakości niż poprzednie wydania (chyba).. <br />
-            <TextA href="https://allegrolokalnie.pl/oferta/dipoehiperrealizm-hyperdeluxe-preorder">LINK DO LICYTACJI WERSJI HYPERDELUXE</TextA>
             <br />
             <br />
             TRACKLISTA

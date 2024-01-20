@@ -72,7 +72,7 @@ const Header = styled.h1`
   }
 `;
 
-const Text = styled.a`
+const Text = styled.button`
   max-width: 30vw;
   height: auto;
   font-family: "Amatic SC", cursive;
@@ -126,7 +126,7 @@ const Homepage = (props) => {
         <Header onClick={() => props.setState(false)}>
           DIPOE - hiperrealizm
         </Header>
-        <Text href="https://allegrolokalnie.pl/oferta/dipoehiperrealizm-hyperdeluxe-preorder">LINK DO LICYTACJI WERSJI HYPERDELUXE</Text>
+        <Text onClick={() => props.setState(false)}>Kup teraz</Text>
       </Column>
       <BottomText onClick={() => navigate("/rules")}>Regulamin</BottomText>
     </Frame>
