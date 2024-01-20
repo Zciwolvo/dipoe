@@ -145,7 +145,6 @@ const Purchase = (props) => {
           <Text>
             Przedstawiamy drugi longplay DIPOE ,,hiperrealizm", materiał zrealizowany w kilkukrotnie lepszej jakości niż poprzednie wydania (chyba).. <br />
             <br />
-            <br />
             TRACKLISTA
           </Text>
           <Row style={{ width: "30em" }}>
