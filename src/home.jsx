@@ -73,12 +73,12 @@ const Header = styled.h1`
 `;
 
 const Text = styled.button`
-  max-width: 30vw;
+  max-width: 25vw;
   height: auto;
   font-family: "Amatic SC", cursive;
   font-size: 1.5em;
   color: white;
-  background-color: orangered;
+  background-color: midnightblue;
   margin: 0;
   text-shadow: 1px 1px 1px white;
   @media (max-width: 720px) {
