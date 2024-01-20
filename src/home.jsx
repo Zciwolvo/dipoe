@@ -78,6 +78,7 @@ const Text = styled.button`
   font-family: "Amatic SC", cursive;
   font-size: 1.5em;
   color: white;
+  background-color: orangered;
   margin: 0;
   text-shadow: 1px 1px 1px white;
   @media (max-width: 720px) {
