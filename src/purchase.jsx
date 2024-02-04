@@ -179,7 +179,7 @@ const Purchase = (props) => {
           </Row>
           <Text style={{ marginBottom: "10em" }}>
             <br />
-            Cena preorderu to 59.99PLN
+            Cena płyty to 40PLN
             <br />
             Premiera: 05.02.2024
             <br />
