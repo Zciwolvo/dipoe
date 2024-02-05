@@ -169,12 +169,6 @@ const Purchase = (props) => {
               <br />18.namaste
               <br />19.chodź tu
               <br />20.zabij ją (First Official Dipoe Recording,2020)[BONUS TRACK]
-              <br />
-              <br />W ramach preorderu do płyty dołączone są:
-              <br />-podpisy na wewnetrznej stronie okladki
-              <br />-magnes z logo
-              <br />-szablon do graffiti z logo
-              <br />-może coś jeszcze
             </Text>
           </Row>
           <Text style={{ marginBottom: "10em" }}>
